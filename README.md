@@ -42,3 +42,4 @@ The output CSV file [matches.csv](http://_vscodecontentref_/9) will have the fol
 ## Example
 
 Example of the output DataFrame:
+     Date          Cup       Team 1       Team 2     Time    Score
