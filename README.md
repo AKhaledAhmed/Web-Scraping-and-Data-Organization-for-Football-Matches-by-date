@@ -33,3 +33,7 @@ The output CSV file [matches.csv](http://_vscodecontentref_/9) will have the fol
 ## Example
 
 Example of the output DataFrame:
+
+## License
+
+This project is licensed under the MIT License.
