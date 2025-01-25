@@ -1,6 +1,6 @@
 # Match Scraper
 
-This project scrapes match data from a website and organizes it into a structured format. The data is then saved into a xlms file.
+This project scrapes match data from a website and organizes it into a structured format. The data is then saved into a xlsx file.
 
 # Project Structure
 
@@ -19,11 +19,11 @@ This project scrapes match data from a website and organizes it into a structure
     pip install pandas beautifulsoup4 requests openpyxl
     ```
 
-2. The script will print the scraped data in both dictionary and DataFrame formats, and save the DataFrame to [matches.xlms](http://_vscodecontentref_/8).
+2. The script will print the scraped data in both dictionary and DataFrame formats, and save the DataFrame to [matches.xlsx](http://_vscodecontentref_/8).
 
 ## Output
 
-The output xlms file [matches.xlms](http://_vscodecontentref_/9) will have the following columns:
+The output xlsx file [matches.xlsx](http://_vscodecontentref_/9) will have the following columns:
 - Date
 - Cup
 - Team 1
