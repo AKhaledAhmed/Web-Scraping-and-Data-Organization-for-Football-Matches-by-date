@@ -42,3 +42,25 @@ This project scrapes match data from a football statistics website and organizes
 - Execute the script using Python:
   ```sh
   python todays_matches_data.ipynb
+  ## Output
+
+- The output Excel file (`matches.xlsx`) will contain the following columns:
+  - **Date**: The date when the data was scraped.
+  - **Cup**: The league or tournament name.
+  - **Team 1**: The first team in the match.
+  - **Team 2**: The second team in the match.
+  - **Time**: The scheduled time of the match or its current status (e.g., "Not started Yet", "on play", "Ended").
+  - **Score**: The current score if the match is in progress or has ended, otherwise "Not started Yet".
+
+- Each sheet in the Excel file will be named according to the date of the scrape (e.g., `Matches_2023-10-25`).
+
+### Example Output (DataFrame)
+
+```plaintext
+           Date             Cup                   Team 1             Team 2  Time            Score
+0    25/01/2025  Premier League          AFC Bournemouth  Nottingham Forest  15:00  Not started Yet
+1    25/01/2025  Premier League   Brighton & Hove Albion            Everton  15:00  Not started Yet
+2    25/01/2025  Premier League                Liverpool       Ipswich Town  15:00  Not started Yet
+3    25/01/2025  Premier League              Southampton   Newcastle United  15:00  Not started Yet
+4    25/01/2025  Premier League  Wolverhampton Wanderers            Arsenal  15:00  Not started Yet
+...
