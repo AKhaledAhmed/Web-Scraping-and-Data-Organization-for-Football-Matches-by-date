@@ -1,6 +1,6 @@
 # Match Scraper
 
-This project scrapes match data from a website and organizes it into a structured format. The data is then saved into a xlsx file.
+This project scrapes match data from a website and organizes it into a structured format. The data is then saved into sheets named acording to the date in a xlsx file.
 
 # Project Structure
 
