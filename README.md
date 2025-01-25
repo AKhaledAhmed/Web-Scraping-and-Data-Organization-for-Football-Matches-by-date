@@ -23,7 +23,7 @@ This project scrapes match data from a website and organizes it into a structure
 
 ## Output
 
-The output CSV file [matches.xlms](http://_vscodecontentref_/9) will have the following columns:
+The output xlms file [matches.xlms](http://_vscodecontentref_/9) will have the following columns:
 - Date
 - Cup
 - Team 1
