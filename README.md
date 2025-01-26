@@ -64,6 +64,7 @@ This project scrapes match data from a football statistics website and organizes
 3    25/01/2025  Premier League              Southampton   Newcastle United  15:00  Not started Yet
 4    25/01/2025  Premier League  Wolverhampton Wanderers            Arsenal  15:00  Not started Yet
 ...
+```
 ## Automation with GitHub Actions
 
 This project uses GitHub Actions to automatically run the Jupyter Notebook every 30 minutes. The workflow is defined in the `.github/workflows/run_notebook.yml` file.
