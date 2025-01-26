@@ -64,3 +64,57 @@ This project scrapes match data from a football statistics website and organizes
 3    25/01/2025  Premier League              Southampton   Newcastle United  15:00  Not started Yet
 4    25/01/2025  Premier League  Wolverhampton Wanderers            Arsenal  15:00  Not started Yet
 ...
+## Automation with GitHub Actions
+
+This project uses GitHub Actions to automatically run the Jupyter Notebook every 30 minutes. The workflow is defined in the `.github/workflows/run_notebook.yml` file.
+
+### Setting Up GitHub Actions
+
+1. **Create the Workflow File**:
+   - In your repository, create a directory called `.github/workflows`.
+   - Inside this directory, create a file named `run_notebook.yml`.
+
+2. **Define the Workflow**:
+   - Add the following content to `run_notebook.yml`:
+
+```yaml
+name: Run Jupyter Notebook
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # This cron expression schedules the job to run every 30 minutes
+  push:
+    branches:
+      - main  # Adjust this to your default branch
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # Specify the Python version you need
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas beautifulsoup4 requests openpyxl jupyter nbconvert
+
+    - name: Run Jupyter Notebook
+      run: |
+        jupyter nbconvert --to notebook --execute todays_matches_data.ipynb --output executed_notebook.ipynb
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add matches.xlsx
+        git commit -m 'Update matches.xlsx'
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
